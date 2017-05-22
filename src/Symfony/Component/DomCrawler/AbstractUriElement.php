@@ -40,7 +40,7 @@ abstract class AbstractUriElement
      *
      * @throws \InvalidArgumentException if the node is not a link
      */
-    public function __construct(\DOMElement $node, $currentUri, $method = 'GET')
+    public function __construct(\DOMElement $node, string $currentUri, string $method = 'GET')
     {
         if (!in_array(strtolower(substr($currentUri, 0, 4)), array('http', 'file'))) {
             throw new \InvalidArgumentException(sprintf('Current URI must be an absolute URL ("%s").', $currentUri));

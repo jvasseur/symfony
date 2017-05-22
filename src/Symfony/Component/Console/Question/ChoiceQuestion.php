@@ -32,7 +32,7 @@ class ChoiceQuestion extends Question
      * @param array  $choices  The list of available choices
      * @param mixed  $default  The default answer to return
      */
-    public function __construct($question, array $choices, $default = null)
+    public function __construct(string $question, array $choices, $default = null)
     {
         parent::__construct($question, $default);
 

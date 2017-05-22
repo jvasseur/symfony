@@ -43,7 +43,7 @@ class CombinedSelectorNode extends AbstractNode
      * @param string        $combinator
      * @param NodeInterface $subSelector
      */
-    public function __construct(NodeInterface $selector, $combinator, NodeInterface $subSelector)
+    public function __construct(NodeInterface $selector, string $combinator, NodeInterface $subSelector)
     {
         $this->selector = $selector;
         $this->combinator = $combinator;

@@ -32,7 +32,7 @@ class LintCommand extends Command
     /**
      * {@inheritdoc}
      */
-    public function __construct($name = 'lint:twig')
+    public function __construct(?string $name = 'lint:twig')
     {
         parent::__construct($name);
     }

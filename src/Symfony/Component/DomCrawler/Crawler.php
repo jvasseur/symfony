@@ -62,7 +62,7 @@ class Crawler implements \Countable, \IteratorAggregate
      * @param string $currentUri The current URI
      * @param string $baseHref   The base href value
      */
-    public function __construct($node = null, $currentUri = null, $baseHref = null)
+    public function __construct($node = null, string $currentUri = null, string $baseHref = null)
     {
         $this->uri = $currentUri;
         $this->baseHref = $baseHref ?: $currentUri;

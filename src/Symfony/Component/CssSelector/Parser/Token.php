@@ -51,7 +51,7 @@ class Token
      * @param string $value
      * @param int    $position
      */
-    public function __construct($type, $value, $position)
+    public function __construct(int $type, string $value, int $position)
     {
         $this->type = $type;
         $this->value = $value;

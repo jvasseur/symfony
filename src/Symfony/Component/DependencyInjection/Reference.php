@@ -27,7 +27,7 @@ class Reference
      *
      * @see Container
      */
-    public function __construct($id, $invalidBehavior = ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE)
+    public function __construct(string $id, int $invalidBehavior = ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE)
     {
         $this->id = (string) $id;
         $this->invalidBehavior = $invalidBehavior;

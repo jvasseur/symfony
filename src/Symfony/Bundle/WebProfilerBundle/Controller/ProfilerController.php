@@ -48,7 +48,7 @@ class ProfilerController
      * @param ContentSecurityPolicyHandler $cspHandler      The Content-Security-Policy handler
      * @param string                       $baseDir         The project root directory
      */
-    public function __construct(UrlGeneratorInterface $generator, Profiler $profiler = null, \Twig_Environment $twig, array $templates, $toolbarPosition = 'bottom', ContentSecurityPolicyHandler $cspHandler = null, $baseDir = null)
+    public function __construct(UrlGeneratorInterface $generator, Profiler $profiler = null, \Twig_Environment $twig, array $templates, string $toolbarPosition = 'bottom', ContentSecurityPolicyHandler $cspHandler = null, sting $baseDir = null)
     {
         $this->generator = $generator;
         $this->profiler = $profiler;

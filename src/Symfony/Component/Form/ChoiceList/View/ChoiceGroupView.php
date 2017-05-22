@@ -39,7 +39,7 @@ class ChoiceGroupView implements \IteratorAggregate
      * @param ChoiceGroupView[]|ChoiceView[] $choices The choice views in the
      *                                                group.
      */
-    public function __construct($label, array $choices = array())
+    public function __construct(string $label, array $choices = array())
     {
         $this->label = $label;
         $this->choices = $choices;

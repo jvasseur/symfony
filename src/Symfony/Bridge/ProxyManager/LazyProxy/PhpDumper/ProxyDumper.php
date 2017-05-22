@@ -45,7 +45,7 @@ class ProxyDumper implements DumperInterface
      *
      * @param string $salt
      */
-    public function __construct($salt = '')
+    public function __construct(string $salt = '')
     {
         $this->salt = $salt;
         $this->proxyGenerator = new LazyLoadingValueHolderGenerator();

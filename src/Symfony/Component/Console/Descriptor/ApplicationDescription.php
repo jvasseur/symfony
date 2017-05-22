@@ -61,7 +61,7 @@ class ApplicationDescription
      * @param string|null $namespace
      * @param bool        $showHidden
      */
-    public function __construct(Application $application, $namespace = null, $showHidden = false)
+    public function __construct(Application $application, ?string $namespace = null, bool $showHidden = false)
     {
         $this->application = $application;
         $this->namespace = $namespace;

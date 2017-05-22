@@ -59,7 +59,7 @@ class DbalSessionHandler implements \SessionHandlerInterface
      * @param Connection $con       A connection
      * @param string     $tableName Table name
      */
-    public function __construct(Connection $con, $tableName = 'sessions')
+    public function __construct(Connection $con, string $tableName = 'sessions')
     {
         $this->con = $con;
         $this->table = $tableName;

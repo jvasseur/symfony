@@ -37,7 +37,7 @@ class AutowirePass extends AbstractRecursivePass
     /**
      * @param bool $throwOnAutowireException If false, retrieved errors via getAutowiringExceptions
      */
-    public function __construct($throwOnAutowireException = true)
+    public function __construct(bool $throwOnAutowireException = true)
     {
         $this->throwOnAutowiringException = $throwOnAutowireException;
     }

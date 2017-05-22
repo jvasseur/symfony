@@ -30,7 +30,7 @@ class ConfigCacheFactory implements ConfigCacheFactoryInterface
     /**
      * @param bool $debug The debug flag to pass to ConfigCache
      */
-    public function __construct($debug)
+    public function __construct(bool $debug)
     {
         $this->debug = $debug;
     }

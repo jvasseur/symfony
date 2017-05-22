@@ -65,7 +65,7 @@ class DoctrineChoiceLoader implements ChoiceLoaderInterface
      * @param ChoiceListFactoryInterface $factory      The factory for creating
      *                                                 the loaded choice list
      */
-    public function __construct(ObjectManager $manager, $class, $idReader = null, $objectLoader = null, $factory = null)
+    public function __construct(ObjectManager $manager, string $class, $idReader = null, $objectLoader = null, $factory = null)
     {
         $classMetadata = $manager->getClassMetadata($class);
 

@@ -51,7 +51,7 @@ class Specificity
      * @param int $b
      * @param int $c
      */
-    public function __construct($a, $b, $c)
+    public function __construct(int $a, int $b, int $c)
     {
         $this->a = $a;
         $this->b = $b;

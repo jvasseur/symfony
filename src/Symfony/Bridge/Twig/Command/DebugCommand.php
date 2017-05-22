@@ -30,7 +30,7 @@ class DebugCommand extends Command
     /**
      * {@inheritdoc}
      */
-    public function __construct($name = 'debug:twig')
+    public function __construct(?string $name = 'debug:twig')
     {
         parent::__construct($name);
     }

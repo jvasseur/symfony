@@ -52,7 +52,7 @@ class Command
      *
      * @throws LogicException When the command name is empty
      */
-    public function __construct($name = null)
+    public function __construct(?string $name = null)
     {
         $this->definition = new InputDefinition();
 

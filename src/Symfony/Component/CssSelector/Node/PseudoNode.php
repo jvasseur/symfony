@@ -37,7 +37,7 @@ class PseudoNode extends AbstractNode
      * @param NodeInterface $selector
      * @param string        $identifier
      */
-    public function __construct(NodeInterface $selector, $identifier)
+    public function __construct(NodeInterface $selector, string $identifier)
     {
         $this->selector = $selector;
         $this->identifier = strtolower($identifier);

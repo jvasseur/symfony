@@ -41,7 +41,7 @@ class NodeExtension extends AbstractExtension
      *
      * @param int $flags
      */
-    public function __construct($flags = 0)
+    public function __construct(int $flags = 0)
     {
         $this->flags = $flags;
     }

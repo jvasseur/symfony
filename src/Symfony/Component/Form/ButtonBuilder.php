@@ -60,7 +60,7 @@ class ButtonBuilder implements \IteratorAggregate, FormBuilderInterface
      *
      * @throws InvalidArgumentException If the name is empty.
      */
-    public function __construct($name, array $options = array())
+    public function __construct(string $name, array $options = array())
     {
         $name = (string) $name;
         if ('' === $name) {

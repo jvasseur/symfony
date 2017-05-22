@@ -30,7 +30,7 @@ class TokenStream
      * @param array  $tokens     An array of tokens
      * @param string $expression
      */
-    public function __construct(array $tokens, $expression = '')
+    public function __construct(array $tokens, string $expression = '')
     {
         $this->tokens = $tokens;
         $this->current = $tokens[0];

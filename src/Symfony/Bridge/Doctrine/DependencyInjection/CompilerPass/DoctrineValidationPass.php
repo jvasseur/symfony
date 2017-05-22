@@ -26,7 +26,7 @@ class DoctrineValidationPass implements CompilerPassInterface
      */
     private $managerType;
 
-    public function __construct($managerType)
+    public function __construct(string $managerType)
     {
         $this->managerType = $managerType;
     }

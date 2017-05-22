@@ -36,9 +36,9 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
     /**
      * @param bool $onlyConstructorArguments Sets this Service Reference pass to ignore method calls
      */
-    public function __construct($onlyConstructorArguments = false)
+    public function __construct(bool $onlyConstructorArguments = false)
     {
-        $this->onlyConstructorArguments = (bool) $onlyConstructorArguments;
+        $this->onlyConstructorArguments = $onlyConstructorArguments;
     }
 
     /**

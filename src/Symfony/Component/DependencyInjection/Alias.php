@@ -20,7 +20,7 @@ class Alias
      * @param string $id     Alias identifier
      * @param bool   $public If this alias is public
      */
-    public function __construct($id, $public = true)
+    public function __construct(string $id, bool $public = true)
     {
         $this->id = (string) $id;
         $this->public = $public;

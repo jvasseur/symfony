@@ -55,7 +55,7 @@ final class ProgressBar
      * @param OutputInterface $output An OutputInterface instance
      * @param int             $max    Maximum steps (0 if unknown)
      */
-    public function __construct(OutputInterface $output, $max = 0)
+    public function __construct(OutputInterface $output, int $max = 0)
     {
         if ($output instanceof ConsoleOutputInterface) {
             $output = $output->getErrorOutput();

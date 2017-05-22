@@ -41,7 +41,7 @@ class Reader
     /**
      * @param string $source
      */
-    public function __construct($source)
+    public function __construct(string $source)
     {
         $this->source = $source;
         $this->length = strlen($source);

@@ -34,7 +34,7 @@ class PhpArrayAdapter implements AdapterInterface
      * @param string           $file         The PHP file were values are cached
      * @param AdapterInterface $fallbackPool A pool to fallback on when an item is not hit
      */
-    public function __construct($file, AdapterInterface $fallbackPool)
+    public function __construct(string $file, AdapterInterface $fallbackPool)
     {
         $this->file = $file;
         $this->fallbackPool = $fallbackPool;

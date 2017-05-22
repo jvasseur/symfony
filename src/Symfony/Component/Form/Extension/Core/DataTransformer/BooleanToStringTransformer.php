@@ -34,7 +34,7 @@ class BooleanToStringTransformer implements DataTransformerInterface
      *
      * @param string $trueValue
      */
-    public function __construct($trueValue)
+    public function __construct(string $trueValue)
     {
         $this->trueValue = $trueValue;
     }

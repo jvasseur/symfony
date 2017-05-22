@@ -37,7 +37,7 @@ class LockHandler
      *
      * @throws IOException If the lock directory could not be created or is not writable
      */
-    public function __construct($name, $lockPath = null)
+    public function __construct(string $name, ?string $lockPath = null)
     {
         $lockPath = $lockPath ?: sys_get_temp_dir();
 

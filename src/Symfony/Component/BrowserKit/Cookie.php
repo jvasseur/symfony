@@ -55,7 +55,7 @@ class Cookie
      * @param bool   $httponly     The cookie httponly flag
      * @param bool   $encodedValue Whether the value is encoded or not
      */
-    public function __construct($name, $value, $expires = null, $path = null, $domain = '', $secure = false, $httponly = true, $encodedValue = false)
+    public function __construct(string $name, string $value, string $expires = null, string $path = null, string $domain = '', bool $secure = false, bool $httponly = true, bool $encodedValue = false)
     {
         if ($encodedValue) {
             $this->value = urldecode($value);
