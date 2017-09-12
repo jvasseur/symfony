@@ -712,11 +712,13 @@ class OptionsResolver implements Options
 
         // Now process the individual options. Use offsetGet(), which resolves
         // the option itself and any options that the option depends on
+        $resolved = []
+
         foreach ($clone->defaults as $option => $_) {
-            $clone->offsetGet($option);
+            $resolved[$option] = $clone->offsetGet($option);
         }
 
-        return $clone->resolved;
+        return $resolved;
     }
 
     /**
