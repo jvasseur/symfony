@@ -13,8 +13,8 @@
         <defaults public="false" />
 
         <service id="serializer" class="Symfony\Component\Serializer\Serializer" public="true">
-            <argument type="collection" />
-            <argument type="collection" />
+            <argument type="tagged" tag="serializer.normalizer" />
+            <argument type="tagged" tag="serializer.encoder" />
         </service>
         <service id="Symfony\Component\Serializer\SerializerInterface" alias="serializer" />
         <service id="Symfony\Component\Serializer\Normalizer\NormalizerInterface" alias="serializer" />

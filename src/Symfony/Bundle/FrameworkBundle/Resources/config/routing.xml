@@ -13,7 +13,9 @@
     <services>
         <defaults public="false" />
 
-        <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver" />
+        <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
+            <argument type="tagged" tag="routing.loader" />
+        </service>
 
         <service id="routing.loader.xml" class="Symfony\Component\Routing\Loader\XmlFileLoader">
             <tag name="routing.loader" />

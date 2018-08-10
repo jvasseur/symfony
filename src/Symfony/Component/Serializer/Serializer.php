@@ -64,7 +64,7 @@ class Serializer implements SerializerInterface, ContextAwareNormalizerInterface
     private $denormalizerCache = array();
     private $normalizerCache = array();
 
-    public function __construct(array $normalizers = array(), array $encoders = array())
+    public function __construct(iterable $normalizers = array(), iterable $encoders = array())
     {
         foreach ($normalizers as $normalizer) {
             if ($normalizer instanceof SerializerAwareInterface) {

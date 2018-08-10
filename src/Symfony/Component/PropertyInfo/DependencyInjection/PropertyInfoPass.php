@@ -16,10 +16,14 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
+@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.3, use tagged arguments instead.', PropertyInfoPass::class), E_USER_DEPRECATED);
+
 /**
  * Adds extractors to the property_info service.
  *
  * @author Kévin Dunglas <dunglas@gmail.com>
+ *
+ * @deprecated since Symfony 4.3, use tagged arguments instead
  */
 class PropertyInfoPass implements CompilerPassInterface
 {

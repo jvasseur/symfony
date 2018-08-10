@@ -8,10 +8,10 @@
         <defaults public="false" />
 
         <service id="property_info" class="Symfony\Component\PropertyInfo\PropertyInfoExtractor">
-            <argument type="collection" />
-            <argument type="collection" />
-            <argument type="collection" />
-            <argument type="collection" />
+            <argument type="tagged" tag="property_info.list_extractor" />
+            <argument type="tagged" tag="property_info.type_extractor" />
+            <argument type="tagged" tag="property_info.description_extractor" />
+            <argument type="tagged" tag="property_info.access_extractor" />
         </service>
         <service id="Symfony\Component\PropertyInfo\PropertyAccessExtractorInterface" alias="property_info" />
         <service id="Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface" alias="property_info" />

@@ -16,12 +16,16 @@ use Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 
+@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.3, use tagged arguments instead.', SerializerPass::class), E_USER_DEPRECATED);
+
 /**
  * Adds all services with the tags "serializer.encoder" and "serializer.normalizer" as
  * encoders and normalizers to the "serializer" service.
  *
  * @author Javier Lopez <f12loalf@gmail.com>
  * @author Robin Chalas <robin.chalas@gmail.com>
+ *
+ * @deprecated since Symfony 4.3, use tagged arguments instead
  */
 class SerializerPass implements CompilerPassInterface
 {

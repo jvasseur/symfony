@@ -27,9 +27,9 @@ class LoaderResolver implements LoaderResolverInterface
     private $loaders = array();
 
     /**
-     * @param LoaderInterface[] $loaders An array of loaders
+     * @param iterable|LoaderInterface[] $loaders An array of loaders
      */
-    public function __construct(array $loaders = array())
+    public function __construct(iterable $loaders = array())
     {
         foreach ($loaders as $loader) {
             $this->addLoader($loader);

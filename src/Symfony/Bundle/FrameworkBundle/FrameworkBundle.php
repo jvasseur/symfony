@@ -44,9 +44,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\RemoveEmptyControllerArgume
 use Symfony\Component\HttpKernel\DependencyInjection\ResettableServicePass;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Messenger\DependencyInjection\MessengerPass;
-use Symfony\Component\PropertyInfo\DependencyInjection\PropertyInfoPass;
-use Symfony\Component\Routing\DependencyInjection\RoutingResolverPass;
-use Symfony\Component\Serializer\DependencyInjection\SerializerPass;
 use Symfony\Component\Translation\DependencyInjection\TranslationDumperPass;
 use Symfony\Component\Translation\DependencyInjection\TranslationExtractorPass;
 use Symfony\Component\Translation\DependencyInjection\TranslatorPass;
@@ -89,7 +86,6 @@ class FrameworkBundle extends Bundle
         $container->addCompilerPass(new LoggerPass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, -32);
         $container->addCompilerPass(new RegisterControllerArgumentLocatorsPass());
         $container->addCompilerPass(new RemoveEmptyControllerArgumentLocatorsPass(), PassConfig::TYPE_BEFORE_REMOVING);
-        $container->addCompilerPass(new RoutingResolverPass());
         $container->addCompilerPass(new ProfilerPass());
         // must be registered before removing private services as some might be listeners/subscribers
         // but as late as possible to get resolved parameters
@@ -105,8 +101,6 @@ class FrameworkBundle extends Bundle
         $this->addCompilerPassIfExists($container, TranslationExtractorPass::class);
         $this->addCompilerPassIfExists($container, TranslationDumperPass::class);
         $container->addCompilerPass(new FragmentRendererPass());
-        $this->addCompilerPassIfExists($container, SerializerPass::class);
-        $this->addCompilerPassIfExists($container, PropertyInfoPass::class);
         $container->addCompilerPass(new DataCollectorTranslatorPass());
         $container->addCompilerPass(new ControllerArgumentValueResolverPass());
         $container->addCompilerPass(new CachePoolPass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 32);

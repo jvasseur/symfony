@@ -16,10 +16,14 @@ use Symfony\Component\DependencyInjection\Compiler\PriorityTaggedServiceTrait;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
+@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.3, use a tagged argument instead.', RoutingResolverPass::class), E_USER_DEPRECATED);
+
 /**
  * Adds tagged routing.loader services to routing.resolver service.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @deprecated since Symfony 4.3, use a tagged argument instead
  */
 class RoutingResolverPass implements CompilerPassInterface
 {
