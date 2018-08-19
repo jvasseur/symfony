@@ -106,22 +106,46 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * @param bool                 $first   Whether to return the first value or all header values
      *
      * @return string|string[]|null The first header value or default value if $first is true, an array of values otherwise
+     *
+     * @deprecated since Symfony 4.3, use getFirst or getAll instead
      */
     public function get($key, $default = null, $first = true)
+    {
+        @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.3 use getFirst of getAll instead.', __METHOD__), E_USER_DEPRECATED);
+
+        return $first ? $this->getFirst($key, $default) : $this->getAll($key, $default);
+    }
+
+    /**
+     * Returns the first header value by name.
+     */
+    public function getFirst(string $key, ?string $default = null): ?string
+    {
+
+        $key = str_replace('_', '-', strtolower($key));
+        $headers = $this->all();
+
+        if (!array_key_exists($key, $headers)) {
+            return $default;
+        }
+
+        return \count($headers[$key]) ? $headers[$key][0] : $default;
+    }
+
+    /**
+     * Returns all header values by name.
+     */
+    public function getAll(string $key, ?string $default = null): array
     {
         $key = str_replace('_', '-', strtolower($key));
         $headers = $this->all();
 
         if (!array_key_exists($key, $headers)) {
             if (null === $default) {
-                return $first ? null : array();
+                return array();
             }
 
-            return $first ? $default : array($default);
-        }
-
-        if ($first) {
-            return \count($headers[$key]) ? $headers[$key][0] : $default;
+            return array($default);
         }
 
         return $headers[$key];
