@@ -133,6 +133,10 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
             $bundle->boot();
         }
 
+        if ($this->container->has('kernel_boot')) {
+            $this->container->get('kernel_boot')->boot();
+        }
+
         $this->booted = true;
     }
 
@@ -174,6 +178,10 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
         foreach ($this->getBundles() as $bundle) {
             $bundle->shutdown();
             $bundle->setContainer(null);
+        }
+
+        if ($this->container->has('kernel_shutdown')) {
+            $this->container->get('kernel_shutdown')->shutdown();
         }
 
         $this->container = null;

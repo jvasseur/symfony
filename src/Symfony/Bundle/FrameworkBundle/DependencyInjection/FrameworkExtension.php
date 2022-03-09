@@ -78,6 +78,7 @@ use Symfony\Component\HttpClient\RetryableHttpClient;
 use Symfony\Component\HttpClient\ScopingHttpClient;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Attribute\AsController;
+use Symfony\Component\HttpKernel\BootInterface;
 use Symfony\Component\HttpKernel\CacheClearer\CacheClearerInterface;
 use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerInterface;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver;
@@ -85,6 +86,7 @@ use Symfony\Component\HttpKernel\Controller\ArgumentResolver\UidValueResolver;
 use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;
 use Symfony\Component\HttpKernel\DataCollector\DataCollectorInterface;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\HttpKernel\ShutdowntInterface;
 use Symfony\Component\Lock\LockFactory;
 use Symfony\Component\Lock\PersistingStoreInterface;
 use Symfony\Component\Lock\Store\StoreFactory;
@@ -569,6 +571,10 @@ class FrameworkExtension extends Extension
             ->addTag('kernel.locale_aware');
         $container->registerForAutoconfiguration(ResetInterface::class)
             ->addTag('kernel.reset', ['method' => 'reset']);
+        $container->registerForAutoconfiguration(BootInterface::class)
+            ->addTag('kernel.boot', ['method' => 'boot']);
+        $container->registerForAutoconfiguration(ShutdownInterface::class)
+            ->addTag('kernel.shutdown', ['method' => 'shutdown']);
 
         if (!interface_exists(MarshallerInterface::class)) {
             $container->registerForAutoconfiguration(ResettableInterface::class)
